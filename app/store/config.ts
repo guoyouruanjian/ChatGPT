@@ -139,7 +139,7 @@ export function limitNumber(
 export function limitModel(name: string) {
   return ALL_MODELS.some((m) => m.name === name && m.available)
     ? name
-    : "gpt-3.5-turbo";
+    : "gpt-3.5-turbo-16k-0613";
 }
 
 export const ModalConfigValidator = {

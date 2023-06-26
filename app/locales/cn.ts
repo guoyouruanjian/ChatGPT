@@ -55,7 +55,8 @@ const cn = {
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += "，Shift + Enter 换行";
       }
-      return inputHints + "，/ 触发补全，: 触发命令";
+      //return inputHints + "，/ 触发补全，: 触发命令";
+      return "请输入您想咨询的法律问题，" + inputHints;
     },
     Send: "发送",
     Config: {
