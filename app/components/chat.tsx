@@ -825,7 +825,7 @@ export function Chat() {
                     {message.role === "user" ? (
                       <Avatar avatar={config.avatar} />
                     ) : (
-                      <img src="http://cdn128.speaklaw.cn/static/common/images/ai.png" />
+                      <img src="https://www.speaklaw.cn/static/common/img/ai.png" />
                     )}
                   </div>
                   {showTyping && (
