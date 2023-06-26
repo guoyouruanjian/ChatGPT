@@ -28,6 +28,13 @@ export class ChatGPTApi implements LLMApi {
       content: v.content,
     }));
 
+    //追加律师角色
+    messages.unshift({
+      role: "user",
+      content:
+        "我想让你做我的法律顾问。我将描述一种法律情况，您将就如何处理它提供建议。你应该只回复你的建议，而不是其他。不要写解释。",
+    });
+
     const modelConfig = {
       ...useAppConfig.getState().modelConfig,
       ...useChatStore.getState().currentSession().mask.modelConfig,
@@ -36,10 +43,11 @@ export class ChatGPTApi implements LLMApi {
       },
     };
 
+    // model: modelConfig.model,
     const requestPayload = {
       messages,
       stream: options.config.stream,
-      model: modelConfig.model,
+      model: "gpt-3.5-turbo-16k-0613",
       temperature: modelConfig.temperature,
       presence_penalty: modelConfig.presence_penalty,
       frequency_penalty: modelConfig.frequency_penalty,
